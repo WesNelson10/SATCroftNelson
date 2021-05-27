@@ -47,12 +47,35 @@
                         @if (User.IsInRole("Admin") && Request.IsAuthenticated)
                         {
                             <div class="sb-sidenav-menu-heading">Admin</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="@Url.Action("Index", "UsersAdmin")">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                Manage Users
+                            </a>
+                            <a class="nav-link" href="@Url.Action("Index", "RolesAdmin")">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Manage Roles
                             </a>
                         }
 
+                        @if (User.IsInRole("Admin") || User.IsInRole("Scheduling") && Request.IsAuthenticated)
+                        {
+                            <div class="sb-sidenav-menu-heading">Scheduling</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Enrollment
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link" href="@Url.Action("Index", "Enrollments")">Dashboard</a>
+                                    <a class="nav-link" href="@Url.Action("Create", "Enrollments")">Create</a>
+                                    @*<a class="nav-link" href="@Url.Action("Edit", "Enrollments")">Edit</a>
+                    <a class="nav-link" href="@Url.Action("Delete", "Enrollments")">Delete</a>
+                    <a class="nav-link" href="@Url.Action("Details", "Enrollments")">Details</a>*@
+
+                                </nav>
+                            </div>
+                        }
                         <div class="sb-sidenav-menu-heading">Classes</div>
 
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
