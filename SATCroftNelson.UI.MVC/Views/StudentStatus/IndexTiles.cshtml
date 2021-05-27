@@ -1,0 +1,27 @@
+﻿@model IEnumerable<SATCroftNelson.DATA.EF.StudentStatus>
+
+@{
+    ViewBag.Title = "Student Statuses";
+}
+
+<div class="container">
+    <h2 class="text-center">@ViewBag.Title
+    
+    <a href="@Url.Action("Index", "StudentStatus")" class="btn btn-primary pull-right">Table View</a>    
+    </h2>
+
+    <div id="studentStatusGrid" class="row">
+        @foreach (var item in Model)
+        {
+        <div class="card col-md-3 col-sm-6 col-xs-6 studentStatus">
+            <h4 class="text-center">
+                <a href="@Url.Action("Details", "StudentStatus", new { id = item.SSID})" class="text-center">@item.SSName</a>
+            </h4>
+            <div class="statusDescription">
+                <p>@item.SSDescription</p>
+            </div>
+        </div>
+        }
+    </div>
+
+</div>

@@ -8,6 +8,11 @@
     <h2>@ViewBag.Title</h2>
 
     <p>
+        @* Below is a navigation link to the Grid Layout *@
+        <a href="@Url.Action("IndexTiles", "StudentStatus")" class="pull-right btn btn-warning">Grid View</a>
+    </p>
+
+    <p>
         @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
     </p>
     <table class="table">

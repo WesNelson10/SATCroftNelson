@@ -24,3 +24,29 @@ footer a{
     padding: 2%;
     border-radius: 1em;
 }
+
+#layoutSidenav_content {
+    background-image: url('../img/MLImage.jpg');
+    background-size: cover;
+}
+
+div.container {
+    background-color: white;
+}
+
+h1.indexHeader {
+    padding-top: 1.8em;
+    font-size: 6em;
+}
+
+.studentStatus {
+    margin-bottom: .5em;
+}
+
+#studentStatusGrid {
+    justify-content: space-around;
+}
+
+.statusDescription {
+    text-align: center;
+}

@@ -192,6 +192,8 @@
     <Content Include="Content\css\custom.css" />
     <Content Include="Content\css\styles.css" />
     <Content Include="Content\img\error-404-monochrome.svg" />
+    <Content Include="Content\img\indexImage.jpg" />
+    <Content Include="Content\img\MLImage.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -302,6 +304,7 @@
     <Content Include="Views\StudentStatus\Details.cshtml" />
     <Content Include="Views\StudentStatus\Edit.cshtml" />
     <Content Include="Views\StudentStatus\Index.cshtml" />
+    <Content Include="Views\StudentStatus\IndexTiles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SATCroftNelson.DATA.EF\SATCroftNelson.DATA.EF.csproj">
