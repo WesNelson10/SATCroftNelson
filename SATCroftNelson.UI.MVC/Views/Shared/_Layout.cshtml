@@ -55,6 +55,21 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Manage Roles
                             </a>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                                Student Statuses
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link" href="@Url.Action("Index", "StudentStatus")">Dashboard</a>
+                                    <a class="nav-link" href="@Url.Action("Create", "StudentStatus")">Create</a>
+                                    @*<a class="nav-link" href="@Url.Action("Edit", "Enrollments")">Edit</a>
+                    <a class="nav-link" href="@Url.Action("Delete", "Enrollments")">Delete</a>
+                    <a class="nav-link" href="@Url.Action("Details", "Enrollments")">Details</a>*@
+
+                                </nav>
+                            </div>
                         }
 
                         @if (User.IsInRole("Admin") || User.IsInRole("Scheduling") && Request.IsAuthenticated)
@@ -73,6 +88,17 @@
                     <a class="nav-link" href="@Url.Action("Delete", "Enrollments")">Delete</a>
                     <a class="nav-link" href="@Url.Action("Details", "Enrollments")">Details</a>*@
 
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-apple-alt"></i></div> <!-- Maybe fix expanding issue -->
+                                Scheduled Classes
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link" href="@Url.Action("Index", "ScheduledClasses")">Dashboard</a>
+                                    <a class="nav-link" href="@Url.Action("Create", "ScheduledClasses")">Create</a>
                                 </nav>
                             </div>
                         }
@@ -118,15 +144,9 @@
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4 text-center">SAT Tool</h1>
-                        @*<div class="col-xl-3 col-md-6">
-                            <div class="card bg-danger text-white mb-4">
-                                <div class="card-body">Danger Card</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>*@
+                        <div class="col-xl-3 col-md-6">
+
+                        </div>
                 </div>
             </main>
 
