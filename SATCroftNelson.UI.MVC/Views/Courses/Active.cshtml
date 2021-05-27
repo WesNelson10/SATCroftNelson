@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<SATCroftNelson.DATA.EF.Course>
 
 @{
-    ViewBag.Title = "Active";
+    ViewBag.Title = "Active Courses";
 }
 
 <div class="container">
-    <h2>Active</h2>
-
+    <h2>@ViewBag.Title</h2>
+    <p><a class="btn btn-dark text-center" href="@Url.Action("Retired", "Courses")">Retired Courses</a></p>
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
     </p>
     <table class="table">
         <tr>

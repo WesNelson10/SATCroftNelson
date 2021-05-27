@@ -2,13 +2,14 @@
 
 @{
     ViewBag.Title = "Delete";
+    string action = Model.IsActive ? "Retire" : "Reinstate";
 }
 
 <div class="container">
 
     <h2>@ViewBag.Title</h2>
 
-    <h3>Are you sure you want to delete this?</h3>
+    <h3>Are you sure you want to @action this?</h3>
     <div>
         <h4>Course</h4>
         <hr />
@@ -68,7 +69,7 @@
             @Html.AntiForgeryToken()
 
             <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
+                <input type="submit" value="@action" class="btn btn-danger" /> |
                 @Html.ActionLink("Back to List", "Index")
             </div>
         }

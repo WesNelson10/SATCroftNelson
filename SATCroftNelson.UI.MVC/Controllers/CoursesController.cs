@@ -53,7 +53,7 @@ namespace SATCroftNelson.UI.MVC.Controllers
             {
                 db.Courses1.Add(course);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Active");
             }
 
             return View(course);
@@ -85,7 +85,7 @@ namespace SATCroftNelson.UI.MVC.Controllers
             {
                 db.Entry(course).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Active");
             }
             return View(course);
         }
@@ -111,9 +111,19 @@ namespace SATCroftNelson.UI.MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Course course = db.Courses1.Find(id);
-            db.Courses1.Remove(course);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            
+            if (course.IsActive)
+            {
+                course.IsActive = false;
+                db.SaveChanges();
+                return RedirectToAction("Retired");
+            }
+            else
+            {
+                course.IsActive = true;
+                db.SaveChanges();
+                return RedirectToAction("Active");
+            }
         }
 
         public ActionResult Active()

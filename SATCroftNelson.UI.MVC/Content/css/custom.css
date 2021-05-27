@@ -1,3 +1,26 @@
 ﻿.sb-sidenav-footer{
     height: 4.3125em;
 }
+
+tr {
+    border-bottom: black;
+}
+
+body {
+    background-color: #DDD !important;
+}
+
+footer {
+    background-color: #888;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+.form-horizontal{
+    background-color: rgba(170, 170, 170, .5);
+    padding: 2%;
+    border-radius: 1em;
+}

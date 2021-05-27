@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<SATCroftNelson.DATA.EF.StudentStatus>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Student Statuses";
 }
 
 <div class="container">
     <h2>@ViewBag.Title</h2>
 
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
     </p>
     <table class="table">
         <tr>

@@ -40,8 +40,8 @@ namespace SATCroftNelson.UI.MVC.Controllers
         // GET: Enrollments/Create
         public ActionResult Create()
         {
-            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "InstructorName");
-            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FirstName");
+            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "DateNameLocation");
+            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FullName");
             return View();
         }
 
@@ -59,8 +59,8 @@ namespace SATCroftNelson.UI.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "InstructorName", enrollment.ScheduledClassId);
-            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FirstName", enrollment.StudentId);
+            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "DateNameLocation", enrollment.ScheduledClassId);
+            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FullName", enrollment.StudentId);
             return View(enrollment);
         }
 
@@ -76,8 +76,8 @@ namespace SATCroftNelson.UI.MVC.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "InstructorName", enrollment.ScheduledClassId);
-            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FirstName", enrollment.StudentId);
+            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "DateNameLocation", enrollment.ScheduledClassId);
+            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FullName", enrollment.StudentId);
             return View(enrollment);
         }
 
@@ -94,8 +94,8 @@ namespace SATCroftNelson.UI.MVC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "InstructorName", enrollment.ScheduledClassId);
-            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FirstName", enrollment.StudentId);
+            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "DateNameLocation", enrollment.ScheduledClassId);
+            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FullName", enrollment.StudentId);
             return View(enrollment);
         }
 
@@ -120,7 +120,15 @@ namespace SATCroftNelson.UI.MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Enrollment enrollment = db.Enrollments.Find(id);
-            db.Enrollments.Remove(enrollment);
+            DateTime firstDay = new DateTime(1, 1, 1);
+            if (enrollment.Student.SSID == 1)
+            {
+                enrollment.Student.SSID = 2;
+            }
+            else
+            {
+                enrollment.Student.SSID = 1;
+            }
             db.SaveChanges();
             return RedirectToAction("Index");
         }

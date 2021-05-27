@@ -10,7 +10,9 @@ namespace SATCroftNelson.DATA.EF
     #region Course Metadata
     public class CourseMetadata
     {
-        //public int CourseId { get; set; }
+        [Display(Name = "Course ID")]
+        public int CourseId { get; set; }
+
         [Required(ErrorMessage = "Course Name is a required field.")]
         [Display(Name = "Course Name")]
         [StringLength(50, ErrorMessage = "Course Name must be 50 characters or less.")]
@@ -45,7 +47,8 @@ namespace SATCroftNelson.DATA.EF
     #region Enrollment Metadata
     public class EnrollmentMetadata
     {
-        //public int EnrollmentId { get; set; }
+        [Display(Name = "Enrollment ID")]
+        public int EnrollmentId { get; set; }
 
         [Required(ErrorMessage = "Student ID is a required field.")]
         [Display(Name = "Student ID")]
@@ -70,7 +73,8 @@ namespace SATCroftNelson.DATA.EF
 
     public class ScheduledClassMetadata
     {
-        //public int ScheduledClassId { get; set; }
+        [Display(Name = "Scheduled Class ID")]
+        public int ScheduledClassId { get; set; }
 
         [Required(ErrorMessage = "Course ID is a required field.")]
         [Display(Name = "Course ID")]
@@ -100,14 +104,17 @@ namespace SATCroftNelson.DATA.EF
     }
 
     [MetadataType(typeof(ScheduledClassMetadata))]
-    public partial class ScheduledClass { }
+    public partial class ScheduledClass {
+        public string DateNameLocation { get { return StartDate.ToShortDateString() + " " + InstructorName + " " + Location; } }
+    }
 
     #endregion
 
     #region Student Metadata
     public class StudentMetadata
     {
-        //public int StudentId { get; set; }
+        [Display(Name = "Student ID")]
+        public int StudentId { get; set; }
 
         [Required(ErrorMessage = "First Name is a required field.")]
         [Display(Name = "First Name")]
@@ -143,7 +150,6 @@ namespace SATCroftNelson.DATA.EF
         [StringLength(15, ErrorMessage = "Phone must be 15 characters or less.")]
         public string Phone { get; set; }
 
-
         [Required(ErrorMessage = "Email is a required field.")]
         [StringLength(60, ErrorMessage = "Email must be 60 characters or less.")]
         public string Email { get; set; }
@@ -155,10 +161,15 @@ namespace SATCroftNelson.DATA.EF
         [Required(ErrorMessage = "SSID is a required field.")]
         [Range(1, int.MaxValue, ErrorMessage = "Must be 1 or greater.")]
         public int SSID { get; set; }
+
+        [Display(Name = "Full Name")]
+        public string FullName { get; set; }
     }
 
     [MetadataType(typeof(StudentMetadata))]
-    public partial class Student { }
+    public partial class Student {
+        public string FullName { get { return FirstName + " " + LastName; } }
+    }
 
     #endregion
 

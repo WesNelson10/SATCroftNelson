@@ -29,7 +29,7 @@ namespace SATCroftNelson.UI.MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
+            Student student = db.Students.Find(id);           
             if (student == null)
             {
                 return HttpNotFound();
