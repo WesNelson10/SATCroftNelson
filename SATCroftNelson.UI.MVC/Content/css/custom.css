@@ -32,10 +32,12 @@ footer a{
 
 div.container {
     background-color: white;
+    border-radius: 3em;
+    padding: 3%;
 }
 
 h1.indexHeader {
-    padding-top: 1.8em;
+    padding-top: 2%;
     font-size: 6em;
 }
 
@@ -49,4 +51,8 @@ h1.indexHeader {
 
 .statusDescription {
     text-align: center;
+}
+
+input.btn.btn-default{
+    margin-top: 2%;
 }

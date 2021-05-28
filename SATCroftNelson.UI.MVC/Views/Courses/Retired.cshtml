@@ -7,9 +7,11 @@
 <div class="container">
     <h2>@ViewBag.Title</h2>
 
+    <p><a class="btn btn-warning text-center" href="@Url.Action("Active", "Courses")">Active Courses</a></p>
     <p>
         @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
     </p>
+
     <table class="table">
         <tr>
             <th>
