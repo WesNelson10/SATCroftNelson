@@ -263,6 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\AppSecretKeys.config" />
+    <Content Include="Content\SATDocumentation.pdf" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\UsersAdmin\Index.cshtml" />
