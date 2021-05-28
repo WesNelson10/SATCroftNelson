@@ -20,6 +20,7 @@ namespace SATCroftNelson.DATA.EF
 
         [Required(ErrorMessage = "Course Description is a required field.")]
         [UIHint("MultilineText")]
+        [Display(Name = "Course Description")]
         public string CourseDescription { get; set; }
 
         [Required(ErrorMessage = "Credit Hours is a required field.")]
