@@ -23,8 +23,12 @@ namespace SATCroftNelson.UI.MVC
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/css/styles.css",
+                      "~/Content/css/custom.css"));
+
+            bundles.Add(new StyleBundle("~/Scripts/js").Include(
+                "~/Scripts/js/datatables-simple-demo.js",
+                "~/Scripts/js/scripts.js"));
         }
     }
 }
